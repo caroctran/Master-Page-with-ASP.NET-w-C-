@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Project_Lab_04.Site" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="StyleSheet1.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Lab 04 - Caroline Tran</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <section id="container">
+            <header id="top" class="shaded">
+                <h1>CIS 2222</h1>
+            </header>
+            <br />
+            <div class="shaded">
+                <h2>Today's Date: </h2>
+                <span id="datetime"></span>
+                <script>
+                    var dt = new Date();
+                    document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+                </script>
+            </div>
+            <br />
+            <nav id="bg-dark navbar-dark" class="shaded">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="WebForm1.aspx">Page 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="WebForm2.aspx">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Webform3.aspx">Page 3</a>
+                    </li>
+                </ul>
+            </nav>
+            <br />
+
+            <div class="columns">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                    <div class="col-sm-4 offset-sm-1"> <h1>Information <small>Content in this box, the footer, header, and date/time is universal for all pages</small></h1></div>
+                </div>
+            </div>
+            <br />
+            <footer id="bottom" class="shaded">
+                <h2>Footer content
+                </h2>
+            </footer>
+        </section>
+    </form>
+</body>
+</html>
+
